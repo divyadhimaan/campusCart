@@ -1,0 +1,44 @@
+.page-header {
+    /* background-image: url("../../assets/img/1.jpg"); */
+    
+}
+
+.banner {
+    height: 700px;
+    font-family: 'Varela Round', sans-serif;
+  }
+  
+  .b__content {
+    margin: auto;
+    /* margin-top:10px; */
+    /* background-image: url("../../assets/img/one.jfif") ; */
+    background-repeat: no-repeat;
+    
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .b__img{
+    filter: blur(2px);
+  -webkit-filter: blur(2px);
+  }
+
+  .b__title {
+    margin: auto;
+    margin-top: 30px;
+    height:540px;
+    /* max-width: 100vw; */
+  }
+  
+  .b__title > h2 {
+    font-size: 48px;
+    color: #222831;
+  }
+  
+  .banner__img {
+    height: 800px;
+    object-fit: contain;
+  }
