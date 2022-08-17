@@ -10,13 +10,12 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
 // import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography  from "@mui/material/Typography";
+import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Axios from "axios";
 
-import TextField from '@mui/material/TextField';
-
+import TextField from "@mui/material/TextField";
 
 function Copyright(props) {
   return (
@@ -43,6 +42,7 @@ const initialState = {
   email: "",
   password: "",
   phoneNumber: "",
+  confirmPassword: "",
   address: "",
   pincode: "",
   // date: ""
@@ -60,32 +60,34 @@ export default function SignUp({ props }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     // console.log(form);
-
   };
-
 
   const signupShop = () => {
     console.log("in signup shop app");
 
-    Axios({
-      method: "POST",
-      data: {
-        name: form.name,
-        username: form.username,
-        email: form.email,
-        phoneNumber: form.phoneNumber,
-        password: form.password,
-        address: form.address,
-        pincode: form.pincode,
-        // date: form.date
-      },
-      withCredentials: true,
-      url: "http://localhost:5000/signup-shop",
-    }).then((res) => console.log(res));
-
-    
+    if (form.password === form.confirmPassword) {
+      Axios.post("http://localhost:5000/signup-shop", form).then((res) => {
+        console.log(res);
+      });
+    } else {
+      console.log("invalid input");
+    }
+    // Axios({
+    //   method: "POST",
+    //   data: {
+    //     name: form.name,
+    //     username: form.username,
+    //     email: form.email,
+    //     phoneNumber: form.phoneNumber,
+    //     password: form.password,
+    //     address: form.address,
+    //     pincode: form.pincode,
+    //     // date: form.date
+    //   },
+    //   withCredentials: true,
+    //   url: "http://localhost:5000/signup-shop",
+    // }).then((res) => console.log(res));
   };
-
 
   return (
     <ThemeProvider theme={theme}>

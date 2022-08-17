@@ -41,19 +41,20 @@ const initialState = {
   username: "",
   email: "",
   password: "",
+  confirmPassword: "",
   phoneNumber: "",
   address: "",
   pincode: "",
   // date:""
 };
 
-export default function SignUp({props}) {
+export default function SignUp({ props }) {
   // const [isSignup, setIsSignup ] = useState(true);
   const [form, setForm] = useState(initialState);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    // console.log(form);
+    console.log(form);
   };
 
   const handleSubmit = async (event) => {
@@ -66,24 +67,31 @@ export default function SignUp({props}) {
 
   const signupUser = () => {
     console.log("in signup user app");
+    console.log(form);
 
-    Axios({
-      method: "POST",
-      data: {
-        firstName: form.firstName,
-        lastName: form.lastName,
-        username: form.username,
-        email: form.email,
-        phoneNumber: form.phoneNumber,
-        password: form.password,
-        address: form.address,
-        pincode: form.pincode,
-        // date: form.date
-      },
-      withCredentials: true,
-      url: "http://localhost:5000/signup-user",
-    }).then((res) => console.log(res));
-    
+    if (form.password === form.confirmPassword) {
+      Axios.post("http://localhost:5000/signup-user", form).then((res) => {
+        console.log(res);
+      });
+    } else {
+      console.log("invalid input");
+    }
+    // Axios({
+    //   method: "POST",
+    //   data: {
+    //     firstName: form.firstName,
+    //     lastName: form.lastName,
+    //     username: form.username,
+    //     email: form.email,
+    //     phoneNumber: form.phoneNumber,
+    //     password: form.password,
+    //     address: form.address,
+    //     pincode: form.pincode,
+    //     // date: form.date
+    //   },
+    //   withCredentials: true,
+    //   url: "/signup-user",
+    // }).then((res) => console.log(res));
   };
 
   return (
@@ -112,8 +120,7 @@ export default function SignUp({props}) {
             noValidate
             onSubmit={handleSubmit}
             // sx={{ mt: 3 }}
-            style={{marginTop: 25}}
-
+            style={{ marginTop: 25 }}
           >
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
@@ -215,7 +222,7 @@ export default function SignUp({props}) {
                   name="confirmPassword"
                   label="Confirm Password"
                   type="password"
-                  id="confirm-password"
+                  id="confirmPassword"
                   placeholder="Confirm Password"
                   autoComplete="new-password"
                   onChange={handleChange}
@@ -236,19 +243,6 @@ export default function SignUp({props}) {
                   onChange={handleChange}
                 />
               </Grid>
-              {/* <Grid item xs={12} sm={6}>
-                <TextField
-                    required
-                    fullWidth
-                    name="date"
-                    label=""
-                    type="datetime-local"
-                    id="date"
-                    placeholder="Date"
-                    autoComplete="date"
-                    onChange={handleChange}
-                  />
-              </Grid> */}
             </Grid>
             <Button
               type="submit"

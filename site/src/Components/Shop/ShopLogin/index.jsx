@@ -36,7 +36,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 const initialState = {
-  username:"",
+  username: "",
   password: "",
 };
 
@@ -57,15 +57,18 @@ export default function SignUp(props) {
   };
 
   const Shoplogin = () => {
-    Axios({
-      method: "POST",
-      data: {
-        username: form.username,
-        password: form.password,
-      },
-      withCredentials: true,
-      url: "http://localhost:5000/login-shop",
-    }).then((res) => console.log(res));
+    Axios.post("http://localhost:5000/login-shop", form).then((res) => {
+      console.log(res);
+    });
+    // Axios({
+    //   method: "POST",
+    //   data: {
+    //     username: form.username,
+    //     password: form.password,
+    //   },
+    //   withCredentials: true,
+    //   url: "http://localhost:5000/login-shop",
+    // }).then((res) => console.log(res));
   };
 
   // const getUser = () => {
@@ -102,7 +105,7 @@ export default function SignUp(props) {
             noValidate
             onSubmit={handleSubmit}
             // sx={{ mt: 10}}
-            style={{marginTop: 25}}
+            style={{ marginTop: 25 }}
           >
             <Grid container spacing={2}>
               <Grid item xs={12}>
