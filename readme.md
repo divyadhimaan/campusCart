@@ -1,10 +1,9 @@
-# Flash - Deliver to your Doorsteps
+# CampusCart - Deliver to your Doorsteps
 
-• A one-stop online shopping platform for shopping from all the shops within campus during covid times.
+A comprehensive online shopping platform designed to serve students during the COVID-19 pandemic, allowing them to shop conveniently from all campus stores.
 
-• It provides an option to browse through various food items, stationary and cosmetic items and to be
-able to order online and opt for delivery to hostel doors.
+• The platform enables users to browse a wide range of items, including food, stationery, and cosmetics, and place online orders with the option for delivery directly to their hostel doors.
 
-• Designed to save the students’ time, provide them with delivery facilities, maintain social distancing, and manage the shops in an organized way
+• Built to save students time, it also offers a seamless delivery service, ensuring social distancing is maintained. The platform efficiently organizes store operations, streamlining both the shopping and delivery experience.
 
 ![](image/home.jpg)
