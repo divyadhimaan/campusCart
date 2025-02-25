@@ -1,27 +1,33 @@
-// import Footer from './Footer';
-// import IndexNavbar from '../Navbar/IndexNavbar';
+import React from 'react';
 import UserNavbar from '../../Navbar/UserNavbar';
-// import IndexHeader from '../Header/IndexHeader';
-// import Carousel from '../Carousel/Carousel'
 import Cards from '../../Card/index';
 import Typography from '@mui/material/Typography';
-
-
+import { Container, Grid } from '@mui/material';
 
 const Shops = () => {
+  return (
+    <div className='background'>
+      {/* Navbar */}
+      <UserNavbar />
 
-    return (
-        <div className= 'background' style = {{height:'1200px', backgroundColor: '#a1ffce',background: 'linear-gradient(to right, #a1ffce, #faffd1)'}}>
-            {/* <IndexNavbar /> */}
-            <UserNavbar />
-            <Typography variant="h4" component="h4" sx ={{ pt: 10, pl:10, fontFamily: 'Roboto'}}>
-              Types of Shops
-            </Typography>
-                
-            <Cards />
-            {/* <Footer /> */}
-        </div>
-    );
-}
+      {/* Page Title */}
+      <Container sx={{ pt: 10, pb: 4 }}>
+        <Typography variant="h3" component="h1" sx={{ fontFamily: 'Roboto', fontWeight: 'bold', textAlign: 'center', color: '#333' }}>
+          Explore Different Types of Shops
+        </Typography>
+        <Typography variant="h6" sx={{ textAlign: 'center', color: '#555', mt: 2 }}>
+          Discover a variety of shops to suit your needs and preferences.
+        </Typography>
+      </Container>
+
+      {/* Cards Section */}
+      <Container sx={{ pb: 10 }}>
+        <Grid container spacing={4} justifyContent="center">
+          <Cards />
+        </Grid>
+      </Container>
+    </div>
+  );
+};
 
 export default Shops;

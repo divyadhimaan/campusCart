@@ -35,7 +35,7 @@ function IndexHeader() {
               variant="contained"
               className="index-header__button index-header__button--customer"
               size="large"
-              href="/signup-user"
+              href="/login-user"
             >
               Customer
             </Button>
@@ -44,7 +44,7 @@ function IndexHeader() {
               variant="contained"
               className="index-header__button index-header__button--shopkeeper"
               size="large"
-              href="/signup-shop"
+              href="/login-shop"
             >
               Shopkeeper
             </Button>

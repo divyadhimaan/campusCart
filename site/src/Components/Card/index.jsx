@@ -1,63 +1,46 @@
-import CardShops from './CardShops';
+import React from 'react';
 import Grid from '@mui/material/Grid';
-// import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-// import { Link } from 'react-router-dom';
+import CardShops from './CardShops';
 
+// Data for the shops - this can be easily expanded or modified
+const shopData = [
+  {
+    imageURI: "https://images.unsplash.com/photo-1551024601-bec78aea704b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=464&q=80",
+    name: "Food Shops",
+    content: "Various food items and essentials.",
+    type: "food"
+  },
+  {
+    imageURI: "https://images.unsplash.com/photo-1568871391149-449702439177?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1216&q=80",
+    name: "Stationary Shops",
+    content: "Your go-to place for all stationary items.",
+    type: "stationary"
+  },
+  {
+    imageURI: "https://images.unsplash.com/photo-1614735241165-6756e1df61ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80",
+    name: "Other Shops",
+    content: "Shop for a variety of miscellaneous items.",
+    type: "/other-shops"
+  }
+];
 
 const Cards = () => {
-    return (
-        <div >
-            <Grid container spacing={0}>
-                <Grid item xs={6} md={4}>
-                  {/* <Link to='food-shops' style={{ textDecoration: 'none' }}> */}
-                    <CardShops
-                      imageURI = "https://images.unsplash.com/photo-1551024601-bec78aea704b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=464&q=80"
-                      alt = ""
-                      name = "Food Shops"
-                      content = "Address"
-                      // button = "Check ->"
-                      to = "/food-shops"
-                      // status = "Open"
-                      // time = "10:00am - 6:00pm"
-                    />
-                  {/* </Link> */}
-                </Grid>
-              
-              
-              <Grid item xs={6} md={4}>
-                {/* <Link to='/stationary-shops' style={{ textDecoration: 'none' }}> */}
-                  <CardShops
-                    imageURI = "https://images.unsplash.com/photo-1568871391149-449702439177?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1216&q=80"
-                    alt = ""
-                    name = "Stationary Shops"
-                    content = "Address"
-                    to = "/stationary-shops"
-                    // status = "Closed"
-                    // time = "10:00am - 8:00pm"
-                  />
-                {/* </Link> */}
-              </Grid>
-
-
-              <Grid item xs={6} md={4}>
-                {/* <Link to='/other-shops' style={{ textDecoration: 'none' }}> */}
-                  <CardShops
-                    imageURI = "https://images.unsplash.com/photo-1614735241165-6756e1df61ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80"
-                    alt = ""
-                    name = "Other Shops"
-                    content = "Address"
-                    to = "/other-shops"
-                    // status = "Closed"
-                    // time = "10:00am - 6:00pm"
-                  />
-                {/* </Link> */}
-              </Grid>
-
-            </Grid>
-
-
-        </div>
-    );
+  return (
+    <div>
+      <Grid container spacing={4} justifyContent="center">
+        {shopData.map((shop, index) => (
+          <Grid item xs={12} sm={6} md={4} key={index} mt={4}>
+            <CardShops
+              imageURI={shop.imageURI}
+              name={shop.name}
+              content={shop.content}
+              type={shop.type}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </div>
+  );
 }
 
 export default Cards;
