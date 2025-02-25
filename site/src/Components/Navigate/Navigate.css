@@ -1,0 +1,79 @@
+/* Navigate.css */
+
+.card-group {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background-color: none;
+  }
+  
+  .card {
+    height: 350px;
+    width: 20rem;
+    border-radius: 1.5rem;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-img-top {
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    height: 170px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    align-self: flex-end;
+    border-radius: 50px;
+    padding: 14px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #5A9BFF; 
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.05); 
+    margin-top: 20px;
+    margin-right: 20px; 
+  }
+  
+  .button:hover {
+    transform: scale(1.05);  
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.1); 
+    border: 2px solid white;
+  }
+  
+  .button:focus {
+    outline: none; 
+  }
+  
+  .button:active {
+    transform: scale(1); 
+  }
+  
+  .card-body .button {
+    margin-top: auto;
+  }
+  
+  
+  

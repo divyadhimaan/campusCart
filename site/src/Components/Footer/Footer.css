@@ -1,70 +1,78 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 body {
-  float: bottom;
   font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .footer {
-  position: relative;
-  bottom: 0;
   background-color: #24262b;
-  height: 300px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding: 40px 0;
+  color: #ffffff;
 }
 
 .footer__content {
   display: flex;
-  margin-left: 100px;
-}
-
-.White {
-  color: white;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1200px;
+  flex-wrap: wrap;
 }
 
 .footer-col {
   display: flex;
   flex-direction: column;
-  margin-right: 150px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  min-width: 220px;
 }
 
-.footer-col ul {
-  margin-left: -40px;
-}
-
-.footer-col h4 {
+.footer__title {
   font-size: 18px;
   color: #ffffff;
   text-transform: capitalize;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
   font-weight: 500;
   position: relative;
 }
-.footer-col h4::before {
+
+.footer__title::before {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -10px;
+  bottom: -8px;
   background-color: #e91e63;
   height: 2px;
-  box-sizing: border-box;
   width: 50px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 .footer-col ul li {
   font-size: 16px;
   text-transform: capitalize;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 300;
   color: #bbbbbb;
+  font-weight: 300;
   display: block;
   transition: all 0.3s ease;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .footer-col ul li:hover {
   color: #ffffff;
   padding-left: 8px;
@@ -73,24 +81,52 @@ body {
 
 .social__links {
   display: flex;
-  margin-top: 5px;
-}
-
-.social__link:hover {
-  color: #24262b;
-  border-radius: 50%;
-  background-color: #ffffff;
-  padding: 5px;
+  gap: 15px;
+  margin-top: 15px;
 }
 
 .social__link {
   height: 40px;
   width: 40px;
-  margin: 0 10px 10px 0;
-  margin-right: 30px;
   text-align: center;
-  vertical-align: middle;
   line-height: 40px;
   color: #ffffff;
+  border-radius: 50%;
+  background-color: #333;
   transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.social__link:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+.footer__bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #bbbbbb;
+  width: 100%;
+}
+
+.footer__bottom p {
+  margin: 0;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .footer__content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-col {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .footer__bottom {
+    margin-top: 30px;
+  }
 }

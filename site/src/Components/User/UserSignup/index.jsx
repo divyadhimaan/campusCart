@@ -4,35 +4,15 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import Checkbox from '@mui/material/Checkbox';
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
-// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Axios from "axios";
 
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="/">
-        ⚡ Flash
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 const theme = createTheme();
 
 const initialState = {
@@ -45,225 +25,167 @@ const initialState = {
   phoneNumber: "",
   address: "",
   pincode: "",
-  // date:""
 };
 
-export default function SignUp({ props }) {
-  // const [isSignup, setIsSignup ] = useState(true);
+export default function SignUp() {
   const [form, setForm] = useState(initialState);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    console.log(form);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    // console.log(form);
-    // isSignup ? register() : login();
-    // const {  firstName, lastName, email, phoneNumber, password } = form;
-  };
-
-  const signupUser = () => {
-    console.log("in signup user app");
-    console.log(form);
-
+  const signupUser = async () => {
     if (form.password === form.confirmPassword) {
       Axios.post("http://localhost:5000/signup-user", form).then((res) => {
         console.log(res);
       });
     } else {
-      console.log("invalid input");
+      console.log("Passwords do not match");
     }
-    // Axios({
-    //   method: "POST",
-    //   data: {
-    //     firstName: form.firstName,
-    //     lastName: form.lastName,
-    //     username: form.username,
-    //     email: form.email,
-    //     phoneNumber: form.phoneNumber,
-    //     password: form.password,
-    //     address: form.address,
-    //     pincode: form.pincode,
-    //     // date: form.date
-    //   },
-    //   withCredentials: true,
-    //   url: "/signup-user",
-    // }).then((res) => console.log(res));
   };
 
   return (
     <ThemeProvider theme={theme}>
       <IndexNavbar />
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="lg">
         <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 2,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
-            <FlashOnIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign Up as Customer
-          </Typography>
-          <form
-            action="/login"
-            method="post"
-            component="form"
-            noValidate
-            onSubmit={handleSubmit}
-            // sx={{ mt: 3 }}
-            style={{ marginTop: 25 }}
-          >
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="fname"
-                  name="firstName"
-                  required
+        <Grid container spacing={2} sx={{ height: "100vh" }}>
+          {/* Left half for the image */}
+          <Grid item xs={12} md={6}>
+            <Box
+              sx={{
+                height: "100%",
+                backgroundImage: 'url("/path/to/your-image.jpg")', // Replace with your image path
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+          </Grid>
+
+          {/* Right half for the form */}
+          <Grid item xs={12} md={6} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <Box sx={{ width: "80%" }}>
+              <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
+                <FlashOnIcon />
+              </Avatar>
+              <Typography component="h1" variant="h5" sx={{ fontWeight: "bold" }}>
+                Create Your Account
+              </Typography>
+              <form
+                noValidate
+                style={{ marginTop: 25 }}
+                onSubmit={(e) => e.preventDefault()}
+              >
+                <Grid container spacing={2}>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      name="firstName"
+                      label="First Name"
+                      required
+                      fullWidth
+                      onChange={handleChange}
+                      autoFocus
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      name="lastName"
+                      label="Last Name"
+                      required
+                      fullWidth
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      name="username"
+                      label="Username"
+                      required
+                      fullWidth
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      name="email"
+                      label="Email Address"
+                      required
+                      fullWidth
+                      type="email"
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      name="address"
+                      label="Address"
+                      required
+                      fullWidth
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      name="phoneNumber"
+                      label="Phone Number"
+                      required
+                      fullWidth
+                      type="tel"
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      name="password"
+                      label="Password"
+                      required
+                      fullWidth
+                      type="password"
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      name="confirmPassword"
+                      label="Confirm Password"
+                      required
+                      fullWidth
+                      type="password"
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      name="pincode"
+                      label="Pincode"
+                      required
+                      fullWidth
+                      type="text"
+                      maxLength="6"
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                </Grid>
+                <Button
+                  type="submit"
                   fullWidth
-                  id="firstName"
-                  label="First Name"
-                  type="text"
-                  placeholder="First Name"
-                  autoFocus
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  type="text"
-                  placeholder="Last Name"
-                  name="lastName"
-                  autoComplete="lname"
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="username"
-                  label="Username"
-                  name="username"
-                  type="text"
-                  placeholder="Username"
-                  autoComplete="username"
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                  autoComplete="email"
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="address"
-                  label="Address"
-                  name="address"
-                  type="text"
-                  placeholder="Address"
-                  autoComplete="address"
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="Number"
-                  label="Phone Number"
-                  name="phoneNumber"
-                  type="text"
-                  placeholder="Phone Number"
-                  autoComplete="email"
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  placeholder="Password"
-                  autoComplete="new-password"
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="confirmPassword"
-                  label="Confirm Password"
-                  type="password"
-                  id="confirmPassword"
-                  placeholder="Confirm Password"
-                  autoComplete="new-password"
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="pincode"
-                  label="Pincode"
-                  type="text"
-                  id="pincode"
-                  pattern="\d{6}"
-                  maxLength="4"
-                  placeholder="Pincode"
-                  autoComplete="pincode"
-                  onChange={handleChange}
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2, bgcolor: "success.main" }}
-              onClick={signupUser}
-              // href="/shops"
-            >
-              Sign Up
-            </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="/login-user" variant="body2">
-                  Already have an account? Log in
-                </Link>
-              </Grid>
-            </Grid>
-          </form>
-        </Box>
-        <Copyright sx={{ mt: 5 }} />
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2, bgcolor: "success.main", borderRadius: "50px" }}
+                  onClick={signupUser}
+                >
+                  Sign Up
+                </Button>
+                <Grid container justifyContent="flex-end">
+                  <Grid item>
+                    <Link href="/login-user" variant="body2">
+                      Already have an account? Log in
+                    </Link>
+                  </Grid>
+                </Grid>
+              </form>
+            </Box>
+          </Grid>
+        </Grid>
       </Container>
     </ThemeProvider>
   );

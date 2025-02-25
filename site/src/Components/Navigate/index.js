@@ -1,57 +1,60 @@
 import React from "react";
 import { Card, CardGroup, Button } from 'react-bootstrap';
-
-
 import onlineShop from './../../assets/img/online-shop.jpg';
 import selfPickup from './../../assets/img/self-pickup.jpg';
-
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-
+import './Navigate.css';  // Import the CSS file
 
 function Navigate() {
   return (
-    <CardGroup style={{marginTop:"180px"}}>
-      {/* <Link to="shops" style={{ textDecoration: "none", color: "Black" }}> */}
-        <Card style={{ margin: "10px", height:"150px",  width: "30rem", borderRadius: "2rem" }}>
-          <Card.Img
-            variant="top"
-            src={onlineShop}
-            style={{
-              borderTopLeftRadius: "2rem",
-              borderTopRightRadius: "2rem",
-            }}
-          />
-          <Card.Body>
-            <Card.Title>Order Online </Card.Title>
-            <Card.Text>Stay Home and Order at your doorsteps.</Card.Text>
-            <Button variant="outline-primary" size="lg" href='/shops' style={{ float: "right",marginLeft: "20px", borderRadius: "50px"}}>Visit Shops <ArrowRightAltIcon /></Button>
-          </Card.Body>
-        </Card>
-      {/* </Link> */}
-      {/* <Link
-        to="select-location"
-        style={{ textDecoration: "none", color: "Black" }}
-      > */}
-        <Card
-          style={{ marginTop: "10px", height:"150px", width: "30rem", borderRadius: "2rem" }}
-        >
-          <Card.Img
-            variant="top"
-            src={selfPickup}
-            style={{
-              borderTopLeftRadius: "2rem",
-              borderTopRightRadius: "2rem",
-              height: "380px",
-            }}
-          />
-          <Card.Body>
-            <Card.Title>Self Pickup</Card.Title>
-            <Card.Text>Order and Pick the delivery yourself</Card.Text>
-            <Button variant="outline-primary" size="lg" href='/shops' style={{ float: "right",marginLeft: "20px", borderRadius: "50px"}}>Check for delivery <ArrowRightAltIcon /></Button>
-            
-          </Card.Body>
-        </Card>
-      {/* </Link> */}
+    <CardGroup className="card-group">
+      
+      {/* Online Order Card */}
+      <Card className="card">
+        <Card.Img
+          variant="top"
+          src={onlineShop}
+          className="card-img-top"
+        />
+        <Card.Body>
+          <Card.Title className="card-title">Order Online</Card.Title>
+          <Card.Text className="card-text">
+            Stay Home and Order at your doorsteps with ease.
+          </Card.Text>
+          <Button 
+            variant="outline-primary" 
+            size="lg" 
+            href="/shops" 
+            className="button"
+          >
+            Visit Shops <ArrowRightAltIcon />
+          </Button>
+        </Card.Body>
+      </Card>
+
+      {/* Self Pickup Card */}
+      <Card className="card">
+        <Card.Img
+          variant="top"
+          src={selfPickup}
+          className="card-img-top"
+        />
+        <Card.Body>
+          <Card.Title className="card-title">Self Pickup</Card.Title>
+          <Card.Text className="card-text">
+            Order and pick up your delivery yourself at your convenience.
+          </Card.Text>
+          <Button 
+            variant="outline-primary" 
+            size="lg" 
+            href="/shops" 
+            className="button"
+          >
+            Check for Delivery <ArrowRightAltIcon />
+          </Button>
+        </Card.Body>
+      </Card>
+
     </CardGroup>
   );
 }

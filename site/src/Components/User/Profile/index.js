@@ -1,8 +1,8 @@
 import "./index.css";
 // import Chart from "./Charts.js"
-import PersonIcon from "@material-ui/icons/Person";
-import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
-import DateRangeIcon from '@mui/icons-material/DateRange';
+// import PersonIcon from "@mui/icons-material/Person";
+// import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+// import DateRangeIcon from '@mui/icons-material/DateRange';
 import UserNavbar from "../../Navbar/UserNavbar";
 import { Container, Card, Button } from "react-bootstrap";
 import profileCover from "./../../../assets/img/profile-cover.jpg";
