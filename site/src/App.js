@@ -11,9 +11,6 @@ import ShopDashboard from './Components/Shop/ShopDashboard';
 import Signup from './Components/Signup';
 import Login from './Components/Login';
 
-// import Food from './Components/Card/Food';
-// import Stationary from './Components/Card/Stationary';
-// import Other from './Components/Card/Other';
 import SpecificShops from './Components/Card/SpecificShops';
 
 
@@ -34,10 +31,6 @@ function App() {
           <Route path='/shops' element={<Shops />} />
           <Route path='/shop-page' element={<ShopPage />} />
 
-{/* 
-          <Route path='/food-shops' element={<Food />} />
-          <Route path='/stationary-shops' element={<Stationary />} />
-          <Route path='/other-shops' element={<Other />} /> */}
           <Route path='/shops/:category' element={<SpecificShops />} />
 
           {/* <Route path='/select-location' element={<SignupPage />} />   */}
