@@ -1,14 +1,14 @@
 import React from 'react';
-import IndexNavbar from '../Navbar/IndexNavbar';
 import { Grid, Card, Container, Button, CardMedia } from '@mui/material';
 import shop from './../../assets/img/shop.png';
 import user from './../../assets/img/user.png';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import DynamicNavbar from '../Navbar/DynamicNavbar';
 
 export default function User() {
   return (
     <div style={{ background: 'linear-gradient(to right, #a1ffce, #faffd1)', minHeight: '100vh' }}>
-      <IndexNavbar />
+      <DynamicNavbar userRole={'user'} />
       <Container style={{ paddingTop: "50px" }}>
         <Grid container spacing={2} justifyContent="center">
           

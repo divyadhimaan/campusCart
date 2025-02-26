@@ -1,14 +1,15 @@
 import React from 'react';
-import UserNavbar from '../../Navbar/UserNavbar';
 import Cards from '../../Card/index';
 import Typography from '@mui/material/Typography';
 import { Container, Grid } from '@mui/material';
+import DynamicNavbar from '../../Navbar/DynamicNavbar';
+import Footer from '../../Footer';
 
 const Shops = () => {
   return (
     <div className='background'>
       {/* Navbar */}
-      <UserNavbar />
+      <DynamicNavbar userRole={'user'} />
 
       {/* Page Title */}
       <Container sx={{ pt: 10, pb: 4 }}>
@@ -26,6 +27,7 @@ const Shops = () => {
           <Cards />
         </Grid>
       </Container>
+      <Footer />
     </div>
   );
 };

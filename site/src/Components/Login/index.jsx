@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import IndexNavbar from "../Navbar/IndexNavbar";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -14,6 +13,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Axios from "axios";
 import loginImg from './../../assets/img/login.jpg';
 import signupImg from './../../assets/img/signup.jpg';
+import DynamicNavbar from "../Navbar/DynamicNavbar";
 
 
 
@@ -38,7 +38,7 @@ export default function Login({ type }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <IndexNavbar />
+      <DynamicNavbar userRole={'guest'} />
       <Container component="main" maxWidth="lg">
         <CssBaseline />
         <Grid container spacing={2} sx={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>

@@ -20,7 +20,7 @@ const shopData = [
     imageURI: "https://images.unsplash.com/photo-1614735241165-6756e1df61ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80",
     name: "Other Shops",
     content: "Shop for a variety of miscellaneous items.",
-    type: "/other-shops"
+    type: "other"
   }
 ];
 

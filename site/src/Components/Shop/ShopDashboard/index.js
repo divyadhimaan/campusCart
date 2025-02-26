@@ -1,5 +1,4 @@
 import React from "react";
-import IndexNavbar from "../../Navbar/IndexNavbar";
 
 
 import { Grid } from "@mui/material";
@@ -11,6 +10,7 @@ import AddShopImage from "./../../../assets/img/add-shop.png";
 
 
 import { Card, Button, Container } from "react-bootstrap";
+import DynamicNavbar from "../../Navbar/DynamicNavbar";
 
 function ShopDashboard() {
   // const [isCustomer, setIsCustomer] = useState(false);
@@ -23,7 +23,7 @@ function ShopDashboard() {
         background: "linear-gradient(to right, #a1ffce, #faffd1)",
       }}
     >
-      <IndexNavbar />
+      <DynamicNavbar userRole={'shopkeeper'} />
       <Container>
         <Grid container spacing={2} style={{ marginLeft: "80px" }}>
           <Grid item xs={6}>

@@ -1,5 +1,4 @@
 import React from 'react';
-import UserNavbar from "../../Navbar/UserNavbar";
 import Footer from '../../Footer';
 import food from "./../../../assets/img/food.jpg";
 import PropTypes from 'prop-types';
@@ -13,6 +12,7 @@ import ReviewsIcon from '@mui/icons-material/Reviews';
 import DirectionsIcon from '@mui/icons-material/Directions';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import ShareIcon from '@mui/icons-material/Share';
+import DynamicNavbar from '../../Navbar/DynamicNavbar';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -122,7 +122,7 @@ function TabPanel(props) {
 function ShopPage() {
     return (
         <div >
-            <UserNavbar />
+            <DynamicNavbar userRole={'user'} />
             <Container style={{fontFamily: "Helvetica"}}>
                 <Image src={food} style={{height: '400px', width:"1366px"}} fluid />
                 <h2 style={{marginTop: '10px',}}>Shop Name</h2>

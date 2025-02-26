@@ -1,15 +1,13 @@
 
-import IndexNavbar from '../Navbar/IndexNavbar';
 import IndexHeader from '../Header/IndexHeader';
 
-// import Carousel from '../Carousel/Carousel'
-// import Shops from '../Shops/Shops';
 import Footer from '../Footer';
+import DynamicNavbar from '../Navbar/DynamicNavbar';
 
 const Dashboard = () => {
     return (
         <div>
-            <IndexNavbar />
+            <DynamicNavbar userRole={'guest'}/>
             
             {/* <Carousel /> */}
             <IndexHeader />

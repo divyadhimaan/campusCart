@@ -38,7 +38,7 @@ function App() {
           <Route path='/food-shops' element={<Food />} />
           <Route path='/stationary-shops' element={<Stationary />} />
           <Route path='/other-shops' element={<Other />} /> */}
-          <Route path='/specific-shops' element={<SpecificShops />} />
+          <Route path='/shops/:category' element={<SpecificShops />} />
 
           {/* <Route path='/select-location' element={<SignupPage />} />   */}
           {/* <Route path='/admin-login' exact component={AdminLogin} /> */}

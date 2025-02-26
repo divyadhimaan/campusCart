@@ -1,6 +1,8 @@
+// CardShops.js
 import React from 'react';
 import { Card, CardActions, CardContent, CardMedia, Typography, Button } from '@mui/material';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import { Link } from 'react-router-dom';
 
 const CardShops = ({ imageURI, name, content, type }) => {
   return (
@@ -22,7 +24,8 @@ const CardShops = ({ imageURI, name, content, type }) => {
       <CardActions sx={{ justifyContent: 'center' }}>
         <Button
           variant="outlined"
-          href={type}
+          component={Link}
+          to={`/shops/${type}`}
           sx={{
             borderRadius: '50px',
             textTransform: 'none',

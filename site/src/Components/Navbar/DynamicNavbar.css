@@ -1,0 +1,12 @@
+/* Center the search form and allow it to grow */
+.search-form {
+    max-width: 600px;
+    flex-grow: 1;
+  }
+  
+  /* Style the search input with a border and rounded corners */
+  .search-input {
+    border: 2px solid #ced4da;
+    border-radius: 4px;
+  }
+  

@@ -3,12 +3,12 @@ import "./index.css";
 // import PersonIcon from "@mui/icons-material/Person";
 // import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 // import DateRangeIcon from '@mui/icons-material/DateRange';
-import UserNavbar from "../../Navbar/UserNavbar";
 import { Container, Card, Button } from "react-bootstrap";
 import profileCover from "./../../../assets/img/profile-cover.jpg";
 import profilePic from "./../../../assets/img/profile-pic.jpg";
 
 import Footer from '../../Footer';
+import DynamicNavbar from "../../Navbar/DynamicNavbar";
 
 
 const Main = () => {
@@ -19,7 +19,7 @@ const Main = () => {
         background: "linear-gradient(to right, #a1ffce, #faffd1)",
       }}
     >
-      <UserNavbar />
+      <DynamicNavbar userRole={'user'} />
 
       <Container>
         <div className="main__container" >
