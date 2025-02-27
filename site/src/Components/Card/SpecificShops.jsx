@@ -2,7 +2,6 @@ import Grid from "@mui/material/Grid";
 import ShopSpecificCard from "./ShopSpecificCard";
 import { useParams } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import Typography from "@mui/material/Typography";
 import Footer from "../Footer";
 import DynamicNavbar from "../Navbar/DynamicNavbar";
